@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # Container Web Server (PHP)
+  web:
+    build: .
+    ports:
+      - "8080:80" # Map port 8080 máy bạn -> port 80 container
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db # Tên service database ở dưới
+      - DB_USER=root
+      - DB_PASS=rootpassword
+      - DB_NAME=demo_docker
+
+  # Container Database (MySQL)
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: demo_docker
+    volumes:
+      - db_data:/var/lib/mysql # Để dữ liệu không mất khi tắt container
+
+volumes:
+  db_data:
