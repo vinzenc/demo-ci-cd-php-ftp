@@ -9,7 +9,8 @@
 </head>
 <body class="container mt-5">
     <h2 class="text-center text-primary">Danh Sách Sinh Viên (Demo CI/CD)</h2>
-    
+    <h2 class="text-center text-primary">Phan Lực Vinh - Thứ 4 ca 2</h2>
+    <h1>Test</h1>
     <div class="card p-4 my-4 bg-light">
         <form action="add.php" method="POST" class="row g-3">
             <div class="col-md-5">
